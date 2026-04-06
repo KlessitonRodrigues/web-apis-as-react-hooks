@@ -1,0 +1,23 @@
+{
+  "name": "authentication-app",
+  "private": true,
+  "version": "1.0.0",
+  "repository": "git@github.com:KlessitonRodrigues/authentication-app.git",
+  "author": "klessiton <klessitom@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "dev": "turbo run dev",
+    "build": "turbo run build",
+    "lint": "turbo run lint",
+    "test": "turbo run test"
+  },
+  "dependencies": {
+    "turbo": "^2.8.13"
+  },
+  "packageManager": "yarn@1.22.22",
+  "workspaces": [
+    "applications/*",
+    "packages/*",
+    "services/*"
+  ]
+}

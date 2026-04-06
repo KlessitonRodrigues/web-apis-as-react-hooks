@@ -1,0 +1,108 @@
+{
+  "navigation": {
+    "appName": "Dashboard App",
+    "home": { "label": "Home", "description": "Go to homepage" },
+    "dashboard": { "label": "Dashboard", "description": "User dashboard" },
+    "settings": { "label": "Settings", "description": "Application settings" },
+    "profile": { "label": "Profile", "description": "User profile" },
+    "logout": {
+      "label": "Logout",
+      "description": "Logout from the application"
+    },
+    "help": {
+      "label": "Help & Support",
+      "description": "Get help and support"
+    },
+    "notifications": {
+      "label": "Notifications",
+      "emptyLabel": "No new notifications"
+    }
+  },
+  "home": {
+    "status": {
+      "title": "Status",
+      "totalRevenue": "Total Revenue",
+      "totalExpenses": "Total Expenses",
+      "netProfit": "Net Profit",
+      "financialOverview": "Financial Overview",
+      "customerGrowth": "Customers"
+    },
+    "financial": {
+      "title": "Financial Overview"
+    }
+  },
+  "dashboard": {
+    "title": "Dashboard",
+    "barchart": {
+      "title": "Sales Performance"
+    }
+  },
+  "settings": {
+    "title": "Settings"
+  },
+  "profile": {
+    "title": "Profile"
+  },
+  "logout": {
+    "confirmation": "Are you sure you want to logout?"
+  },
+  "help": {
+    "title": "Help & Support"
+  },
+  "errors": {
+    "network": "Network error. Please try again later.",
+    "unauthorized": "You are not authorized to perform this action.",
+    "notFound": "The requested resource was not found."
+  },
+  "tables": {
+    "transactions": {
+      "tab": {
+        "all": "All Transactions",
+        "new": "New Transaction",
+        "edit": "Edit Transaction"
+      },
+      "columns": {
+        "name": "Name",
+        "type": "Type",
+        "date": "Date",
+        "value": "Value"
+      },
+      "filters": {
+        "type": {
+          "title": "Type",
+          "allTransactions": "All Transactions",
+          "revenue": "Revenue",
+          "expense": "Expense",
+          "profit": "Profit"
+        },
+        "date": {
+          "title": "Date",
+          "all": "All Dates",
+          "last7Days": "Last 7 Days",
+          "last30Days": "Last 30 Days",
+          "thisMonth": "This Month",
+          "lastMonth": "Last Month"
+        }
+      }
+    }
+  },
+  "forms": {
+    "users": {
+      "phone": "Phone",
+      "phone2": "Alternate Phone",
+      "city": "City",
+      "street": "Street",
+      "state": "State",
+      "zipCode": "ZIP Code",
+      "saveBtn": "Save"
+    },
+    "transactions": {
+      "name": "Name",
+      "type": "Type",
+      "date": "Date",
+      "value": "Value",
+      "saveBtn": "Save",
+      "deleteBtn": "Delete"
+    }
+  }
+}

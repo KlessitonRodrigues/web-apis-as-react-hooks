@@ -1,0 +1,111 @@
+{
+  "navigation": {
+    "appName": "Aplicativo do Painel",
+    "home": { "label": "Início", "description": "Ir para a página inicial" },
+    "dashboard": { "label": "Painel", "description": "Painel do usuário" },
+    "settings": {
+      "label": "Configurações",
+      "description": "Configurações do aplicativo"
+    },
+    "profile": { "label": "Perfil", "description": "Perfil do usuário" },
+    "logout": {
+      "label": "Sair",
+      "description": "Sair do aplicativo"
+    },
+    "help": {
+      "label": "Ajuda e Suporte",
+      "description": "Obter ajuda e suporte"
+    },
+    "notifications": {
+      "label": "Notificações",
+      "emptyLabel": "Nenhuma notificação nova"
+    }
+  },
+  "home": {
+    "status": {
+      "title": "Status",
+      "totalRevenue": "Receita Total",
+      "totalExpenses": "Despesas Totais",
+      "netProfit": "Lucro Líquido",
+      "financialOverview": "Visão Financeira",
+      "customerGrowth": "Clientes"
+    },
+    "financial": {
+      "title": "Visão Financeira"
+    }
+  },
+  "dashboard": {
+    "title": "Painel",
+    "barchart": {
+      "title": "Desempenho de Vendas"
+    }
+  },
+  "settings": {
+    "title": "Configurações"
+  },
+  "profile": {
+    "title": "Perfil"
+  },
+  "logout": {
+    "confirmation": "Tem certeza de que deseja sair?"
+  },
+  "help": {
+    "title": "Ajuda e Suporte"
+  },
+  "errors": {
+    "network": "Erro de rede. Tente novamente mais tarde.",
+    "unauthorized": "Você não tem autorização para realizar esta ação.",
+    "notFound": "O recurso solicitado não foi encontrado."
+  },
+  "tables": {
+    "transactions": {
+      "tab": {
+        "all": "Todas as Transações",
+        "new": "Nova Transação",
+        "edit": "Editar Transação"
+      },
+      "columns": {
+        "name": "Nome",
+        "type": "Tipo",
+        "date": "Data",
+        "value": "Valor"
+      },
+      "filters": {
+        "type": {
+          "title": "Tipo",
+          "allTransactions": "Todas as Transações",
+          "revenue": "Receita",
+          "expense": "Despesa",
+          "profit": "Lucro"
+        },
+        "date": {
+          "title": "Data",
+          "all": "Todas as Datas",
+          "last7Days": "Últimos 7 Dias",
+          "last30Days": "Últimos 30 Dias",
+          "thisMonth": "Este Mês",
+          "lastMonth": "Mês Passado"
+        }
+      }
+    }
+  },
+  "forms": {
+    "users": {
+      "phone": "Telefone",
+      "phone2": "Telefone Alternativo",
+      "city": "Cidade",
+      "street": "Rua",
+      "state": "Estado",
+      "zipCode": "CEP",
+      "saveBtn": "Salvar"
+    },
+    "transactions": {
+      "name": "Nome",
+      "type": "Tipo",
+      "date": "Data",
+      "value": "Valor",
+      "saveBtn": "Salvar",
+      "deleteBtn": "Excluir"
+    }
+  }
+}
