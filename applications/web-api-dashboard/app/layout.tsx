@@ -1,3 +1,5 @@
+import { RedirectPage } from '@packages/daisy-ui-components';
+// @ts-expect-error missing type
 import '@packages/daisy-ui-components/global.css';
 import type { Metadata } from 'next';
 import { Roboto, Roboto_Mono } from 'next/font/google';
@@ -24,6 +26,7 @@ export default function RootLayout({ children }: PropsWithChildren) {
       <body className={`${robotoSans.variable} ${robotoMono.variable} antialiased`}>
         {children}
       </body>
+      <RedirectPage />
     </html>
   );
 }
