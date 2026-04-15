@@ -1,9 +1,10 @@
 import { RedirectPage } from '@packages/daisy-ui-components';
-// @ts-expect-error missing type
 import '@packages/daisy-ui-components/global.css';
 import type { Metadata } from 'next';
 import { Roboto, Roboto_Mono } from 'next/font/google';
 import { PropsWithChildren } from 'react';
+
+import './theme.css';
 
 const robotoSans = Roboto({
   variable: '--font-roboto-sans',

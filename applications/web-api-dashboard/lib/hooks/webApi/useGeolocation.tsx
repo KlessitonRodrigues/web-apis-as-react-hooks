@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 
 export type GeolocationCoords = {
   latitude: number;
@@ -12,11 +12,11 @@ export type GeolocationCoords = {
 };
 
 export type GeolocationError =
-  | { code: "UNSUPPORTED"; message: string }
-  | { code: "PERMISSION_DENIED"; message: string }
-  | { code: "POSITION_UNAVAILABLE"; message: string }
-  | { code: "TIMEOUT"; message: string }
-  | { code: "UNKNOWN"; message: string };
+  | { code: 'UNSUPPORTED'; message: string }
+  | { code: 'PERMISSION_DENIED'; message: string }
+  | { code: 'POSITION_UNAVAILABLE'; message: string }
+  | { code: 'TIMEOUT'; message: string }
+  | { code: 'UNKNOWN'; message: string };
 
 export type UseGeolocationOptions = {
   /**
@@ -53,23 +53,23 @@ function mapBrowserError(err: GeolocationPositionError): GeolocationError {
   switch (err.code) {
     case err.PERMISSION_DENIED:
       return {
-        code: "PERMISSION_DENIED",
-        message: err.message || "Permission denied.",
+        code: 'PERMISSION_DENIED',
+        message: err.message || 'Permission denied.',
       };
     case err.POSITION_UNAVAILABLE:
       return {
-        code: "POSITION_UNAVAILABLE",
-        message: err.message || "Position unavailable.",
+        code: 'POSITION_UNAVAILABLE',
+        message: err.message || 'Position unavailable.',
       };
     case err.TIMEOUT:
       return {
-        code: "TIMEOUT",
-        message: err.message || "Geolocation timeout.",
+        code: 'TIMEOUT',
+        message: err.message || 'Geolocation timeout.',
       };
     default:
       return {
-        code: "UNKNOWN",
-        message: err.message || "Unknown geolocation error.",
+        code: 'UNKNOWN',
+        message: err.message || 'Unknown geolocation error.',
       };
   }
 }
@@ -88,12 +88,10 @@ function toCoords(pos: GeolocationPosition): GeolocationCoords {
   };
 }
 
-export function useGeolocation(
-  options: UseGeolocationOptions = {},
-): UseGeolocationResult {
+export function useGeolocation(options: UseGeolocationOptions = {}): UseGeolocationResult {
   const { watch = false, immediate = true, positionOptions } = options;
 
-  const supported = typeof window !== "undefined" && "geolocation" in navigator;
+  const supported = typeof window !== 'undefined' && 'geolocation' in navigator;
 
   const [loading, setLoading] = useState<boolean>(false);
   const [coords, setCoords] = useState<GeolocationCoords | null>(null);
@@ -101,8 +99,8 @@ export function useGeolocation(
     supported
       ? null
       : {
-          code: "UNSUPPORTED",
-          message: "Geolocation is not supported by this browser.",
+          code: 'UNSUPPORTED',
+          message: 'Geolocation is not supported by this browser.',
         },
   );
 
@@ -121,8 +119,8 @@ export function useGeolocation(
   const startWatching = useCallback(() => {
     if (!supported) {
       setError({
-        code: "UNSUPPORTED",
-        message: "Geolocation is not supported by this browser.",
+        code: 'UNSUPPORTED',
+        message: 'Geolocation is not supported by this browser.',
       });
       return;
     }
@@ -134,11 +132,11 @@ export function useGeolocation(
     setError(null);
 
     watchIdRef.current = navigator.geolocation.watchPosition(
-      (pos) => {
+      pos => {
         setCoords(toCoords(pos));
         setLoading(false);
       },
-      (err) => {
+      err => {
         setError(mapBrowserError(err));
         setLoading(false);
       },
@@ -150,8 +148,8 @@ export function useGeolocation(
     return new Promise((resolve, reject) => {
       if (!supported) {
         const e: GeolocationError = {
-          code: "UNSUPPORTED",
-          message: "Geolocation is not supported by this browser.",
+          code: 'UNSUPPORTED',
+          message: 'Geolocation is not supported by this browser.',
         };
         setError(e);
         reject(e);
@@ -162,13 +160,13 @@ export function useGeolocation(
       setError(null);
 
       navigator.geolocation.getCurrentPosition(
-        (pos) => {
+        pos => {
           const next = toCoords(pos);
           setCoords(next);
           setLoading(false);
           resolve(next);
         },
-        (err) => {
+        err => {
           const mapped = mapBrowserError(err);
           setError(mapped);
           setLoading(false);
@@ -197,14 +195,7 @@ export function useGeolocation(
       // if someone started watching manually, still clean up
       stopWatching();
     };
-  }, [
-    supported,
-    watch,
-    immediate,
-    startWatching,
-    stopWatching,
-    getCurrentPosition,
-  ]);
+  }, [supported, watch, immediate, startWatching, stopWatching, getCurrentPosition]);
 
   return useMemo(
     () => ({
