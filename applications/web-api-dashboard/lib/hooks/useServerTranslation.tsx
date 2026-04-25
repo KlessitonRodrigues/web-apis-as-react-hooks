@@ -1,6 +1,5 @@
 import enLang from '@/public/i18n/en.json';
 import ptLang from '@/public/i18n/pt.json';
-import { NEXTJS } from '@packages/common-types';
 
 export const translations: Record<string, typeof enLang> = {
   en: enLang,
@@ -14,7 +13,7 @@ export const getTranslation = (key: string, translation: typeof enLang) => {
   return result || 'NO_TEXT';
 };
 
-export const useServerTranslations = async (props: NEXTJS.PageProps) => {
+export const useServerTranslations = async (props: any) => {
   const { lang } = await props.params;
   const translation = translations[lang] || translations['en'];
   const translate = (key: string) => getTranslation(key, translation);

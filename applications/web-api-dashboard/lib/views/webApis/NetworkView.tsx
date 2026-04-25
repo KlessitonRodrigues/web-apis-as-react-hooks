@@ -31,13 +31,13 @@ const NetworkView = () => {
           direction="row"
           label="Downlink (Mbps)"
           labelWidth={140}
-          value={network ? network.downlink.toString() : 'N/A'}
+          value={network?.downlink?.toString() ?? 'N/A'}
         />
         <DataDisplay
           direction="row"
           label="RTT (ms)"
           labelWidth={140}
-          value={network ? network.rtt.toString() : 'N/A'}
+          value={network?.rtt?.toString() ?? 'N/A'}
         />
 
         {error && (

@@ -3,13 +3,12 @@ import {
   setTranslationEnv,
   useServerTranslations,
 } from '@/lib/hooks/useServerTranslation';
-import { NEXTJS } from '@packages/common-types';
 import { LoadScreen, NavBar, Page, PageContent, Toastify } from '@packages/daisy-ui-components';
 import { Suspense } from 'react';
 
 export { generateStaticParams };
 
-export default async function PageLayout(props: NEXTJS.PageProps) {
+export default async function PageLayout(props: any) {
   const { t } = await useServerTranslations(props);
   setTranslationEnv((await props.params)?.lang);
 
